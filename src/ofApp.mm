@@ -1,17 +1,20 @@
 #include "ofApp.h"
+#include "Compressor.h"
+#include <vector>
 
 //--------------------------------------------------------------
 void ofApp::setup(){
 
-	ofSetOrientation(OF_ORIENTATION_90_RIGHT);//Set iOS to Orientation Landscape Right
+	ofSetOrientation(OF_ORIENTATION_90_LEFT);
+    
     nImages = DIR.listDir("images/of_logos/");
 
- 	images = new ofImage[nImages];
-    //you can now iterate through the files as you like
+    std::vector<std::string> vec;
     for(int i = 0; i < nImages; i++){
-		images[i].loadImage(DIR.getPath(i));
+        vec.push_back(DIR.getPath(i));
     }
-    currentImage = 0;
+    
+    compressor = new Compressor(vec);
 
     ofBackground(255,255,255);
 
@@ -24,29 +27,10 @@ void ofApp::update(){
 
 //--------------------------------------------------------------
 void ofApp::draw(){
-	
-	float textSpace = 40;
-	
-    if (nImages > 0){
-        ofSetHexColor(0xffffff);
-        images[currentImage].draw(210, textSpace,  images[currentImage].width/1.5,  images[currentImage].height/1.5);
-        ofSetHexColor(0x999999);
-        string pathInfo = "current path is: ";
-		pathInfo += DIR.getPath(currentImage);
-				
-		ofDrawBitmapString(pathInfo, 20, 20);
-		ofDrawBitmapString("touch screen to advance image \n\nmany thanks to hikaru furuhashi\nfor the OFs!" , 210, images[currentImage].height/1.5 + 20 + textSpace);
-    }
-
-    ofSetHexColor(0x000000);
-    for(int i = 0; i < nImages; i++){
-            if (currentImage == i) ofSetHexColor(0xff0000);
-            else ofSetHexColor(0x000000);
-            string fileInfo = "file " + ofToString(i+1) + " = " + DIR.getName(i); // +  "path is " + DIR.getPath(i);
-            ofDrawBitmapString(fileInfo, 20 ,i*14 + textSpace);
-    }
-
-	
+	ofSetHexColor(0xffffff);
+    ofImage *img = compressor->getOutputImg();
+    img->draw(0,0,Compressor::outputWidth,Compressor::outputHeight);
+    
 }
 
 //--------------------------------------------------------------
@@ -56,10 +40,7 @@ void ofApp::exit(){
 
 //--------------------------------------------------------------
 void ofApp::touchDown(ofTouchEventArgs & touch){
-	if (nImages > 0){
-		currentImage++;
-		currentImage %= nImages;
-	}
+
 }
 
 //--------------------------------------------------------------

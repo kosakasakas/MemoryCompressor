@@ -4,6 +4,7 @@
 #include "ofMain.h"
 #include "ofxiOS.h"
 #include "ofxiOSExtras.h"
+#include "Compressor.h"
 
 class ofApp : public ofxiOSApp {
 
@@ -32,6 +33,9 @@ class ofApp : public ofxiOSApp {
         ofDirectory DIR;
 
         int currentImage;
+    
+private:
+    Compressor *compressor;
 
 };
 
