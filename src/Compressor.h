@@ -13,14 +13,19 @@
 #include "ofMain.h"
 
 class Compressor {
-private:
+protected:
     ofImage* outputImg;
-    virtual void setOutputImage(std::vector<std::string> paths);
+    std::vector<std::string> filePaths;
+    int renderingFrame;
+    
+    virtual void setOutputImage() = 0;
     
 public:
     Compressor(std::vector<std::string> paths);
-    ~Compressor();
-    ofImage* getOutputImg();
+    virtual ~Compressor();
+    virtual void setup() = 0;
+    virtual void update() = 0;
+    virtual ofImage* getOutputImg();
     
     static int outputWidth;
     static int outputHeight;

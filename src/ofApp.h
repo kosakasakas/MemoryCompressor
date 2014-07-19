@@ -34,6 +34,8 @@ class ofApp : public ofxiOSApp {
 
         int currentImage;
     
+    ofxiOSVideoPlayer *video;
+    
 private:
     Compressor *compressor;
 

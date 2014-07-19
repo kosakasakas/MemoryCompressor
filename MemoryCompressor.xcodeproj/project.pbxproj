@@ -30,7 +30,9 @@
 		E4A823A412561BE3002F86A2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4A823A312561BE3002F86A2 /* CoreGraphics.framework */; };
 		E4D8936E11527B74007E1F53 /* main.mm in Sources */ = {isa = PBXBuildFile; fileRef = E4D8936B11527B74007E1F53 /* main.mm */; };
 		E4D8936F11527B74007E1F53 /* ofApp.mm in Sources */ = {isa = PBXBuildFile; fileRef = E4D8936D11527B74007E1F53 /* ofApp.mm */; };
-		F8784DD619686B1E00BF15C9 /* Compressor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F8784DD419686B1E00BF15C9 /* Compressor.cpp */; };
+		F8F56D9A19728A370011EE0C /* MovieCompressor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F8F56D9819728A370011EE0C /* MovieCompressor.cpp */; };
+		F8F56D9D1972C88F0011EE0C /* ImageCompressor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F8F56D9B1972C88F0011EE0C /* ImageCompressor.cpp */; };
+		F8F56D9F1972CE250011EE0C /* Compressor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F8F56D9E1972CE250011EE0C /* Compressor.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,8 +80,12 @@
 		E4D8936B11527B74007E1F53 /* main.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = main.mm; path = src/main.mm; sourceTree = SOURCE_ROOT; };
 		E4D8936C11527B74007E1F53 /* ofApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ofApp.h; path = src/ofApp.h; sourceTree = SOURCE_ROOT; };
 		E4D8936D11527B74007E1F53 /* ofApp.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = ofApp.mm; path = src/ofApp.mm; sourceTree = SOURCE_ROOT; };
-		F8784DD419686B1E00BF15C9 /* Compressor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Compressor.cpp; sourceTree = "<group>"; };
 		F8784DD519686B1E00BF15C9 /* Compressor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Compressor.h; sourceTree = "<group>"; };
+		F8F56D9819728A370011EE0C /* MovieCompressor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MovieCompressor.cpp; sourceTree = "<group>"; };
+		F8F56D9919728A370011EE0C /* MovieCompressor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovieCompressor.h; sourceTree = "<group>"; };
+		F8F56D9B1972C88F0011EE0C /* ImageCompressor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ImageCompressor.cpp; sourceTree = "<group>"; };
+		F8F56D9C1972C88F0011EE0C /* ImageCompressor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageCompressor.h; sourceTree = "<group>"; };
+		F8F56D9E1972CE250011EE0C /* Compressor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Compressor.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -201,8 +207,12 @@
 				E4D8936B11527B74007E1F53 /* main.mm */,
 				E4D8936D11527B74007E1F53 /* ofApp.mm */,
 				E4D8936C11527B74007E1F53 /* ofApp.h */,
-				F8784DD419686B1E00BF15C9 /* Compressor.cpp */,
+				F8F56D9B1972C88F0011EE0C /* ImageCompressor.cpp */,
+				F8F56D9C1972C88F0011EE0C /* ImageCompressor.h */,
 				F8784DD519686B1E00BF15C9 /* Compressor.h */,
+				F8F56D9E1972CE250011EE0C /* Compressor.cpp */,
+				F8F56D9819728A370011EE0C /* MovieCompressor.cpp */,
+				F8F56D9919728A370011EE0C /* MovieCompressor.h */,
 			);
 			path = src;
 			sourceTree = SOURCE_ROOT;
@@ -310,9 +320,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F8784DD619686B1E00BF15C9 /* Compressor.cpp in Sources */,
+				F8F56D9D1972C88F0011EE0C /* ImageCompressor.cpp in Sources */,
 				E4D8936E11527B74007E1F53 /* main.mm in Sources */,
 				E4D8936F11527B74007E1F53 /* ofApp.mm in Sources */,
+				F8F56D9A19728A370011EE0C /* MovieCompressor.cpp in Sources */,
+				F8F56D9F1972CE250011EE0C /* Compressor.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

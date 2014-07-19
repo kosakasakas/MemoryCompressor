@@ -1,5 +1,7 @@
 #include "ofApp.h"
 #include "Compressor.h"
+#include "MovieCompressor.h"
+#include "ImageCompressor.h"
 #include <vector>
 
 //--------------------------------------------------------------
@@ -7,30 +9,29 @@ void ofApp::setup(){
 
 	ofSetOrientation(OF_ORIENTATION_90_LEFT);
     
-    nImages = DIR.listDir("images/of_logos/");
+    nImages = DIR.listDir("images/euro2014_low/");
 
     std::vector<std::string> vec;
-    for(int i = 0; i < nImages; i++){
+    /*for(int i = 0; i < nImages; i++){
         vec.push_back(DIR.getPath(i));
-    }
+    }*/
+    vec.push_back("test.mov");
     
-    compressor = new Compressor(vec);
+    compressor = new MovieCompressor(vec);
+    //compressor = new ImageCompressor(vec);
+    compressor->setup();
 
     ofBackground(255,255,255);
-
 }
 
 //--------------------------------------------------------------
 void ofApp::update(){
-
+    compressor->update();
 }
 
 //--------------------------------------------------------------
 void ofApp::draw(){
-	ofSetHexColor(0xffffff);
-    ofImage *img = compressor->getOutputImg();
-    img->draw(0,0,Compressor::outputWidth,Compressor::outputHeight);
-    
+    compressor->getOutputImg()->draw(0, 0);
 }
 
 //--------------------------------------------------------------
