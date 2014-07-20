@@ -9,16 +9,17 @@ void ofApp::setup(){
 
 	ofSetOrientation(OF_ORIENTATION_90_LEFT);
     
-    nImages = DIR.listDir("images/euro2014_low/");
-
-    std::vector<std::string> vec;
-    /*for(int i = 0; i < nImages; i++){
-        vec.push_back(DIR.getPath(i));
-    }*/
-    vec.push_back("test.mov");
+    nImages = DIR.listDir("images/of_logos/");
+    std::vector<std::string> imageVec;
+    for(int i = 0; i < nImages; i++){
+        imageVec.push_back(DIR.getPath(i));
+    }
     
-    compressor = new MovieCompressor(vec);
-    //compressor = new ImageCompressor(vec);
+    std::vector<std::string> movieVec;
+    movieVec.push_back("movie/sample/hands.m4v");
+    
+    compressor = new MovieCompressor(movieVec);
+    //compressor = new ImageCompressor(imageVec);
     compressor->setup();
 
     ofBackground(255,255,255);
